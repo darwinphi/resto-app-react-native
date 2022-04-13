@@ -1,15 +1,12 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 
-export default function CategoryItem() {
+export default function CategoryItem({ name, imageUrl }) {
   return (
     <View style={[styles.container]}>
       <View style={styles.imageContainer}>
-        <Image
-          source={require("../assets/images/burger.png")}
-          style={styles.image}
-        />
+        <Image source={imageUrl} style={styles.image} />
       </View>
-      <Text style={styles.header}>Burger</Text>
+      <Text style={styles.header}>{name}</Text>
     </View>
   );
 }
@@ -21,7 +18,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginVertical: 15,
     marginHorizontal: 25,
-    backgroundColor: "rgb(241, 186, 87)",
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
     shadowColor: "black",
