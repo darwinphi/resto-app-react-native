@@ -1,12 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList, Button } from "react-native";
 import { useFonts, Inter_700Bold } from "@expo-google-fonts/inter";
 import Header from "./src/components/Header";
 import Search from "./src/components/Search";
 import CategoryItem from "./src/components/CategoryItem";
+import { useState } from "react";
 
 export default function App() {
   useFonts({ Inter_700Bold });
+
+  const [term, setTerm] = useState("Burger");
 
   const commonCategories = [
     { name: "Burger", imageUrl: require("./src/assets/images/burger.png") },
@@ -21,6 +24,7 @@ export default function App() {
     <View>
       <Header />
       <Search />
+
       <FlatList
         data={commonCategories}
         renderItem={({ item, index }) => {
@@ -29,6 +33,8 @@ export default function App() {
               name={item.name}
               imageUrl={item.imageUrl}
               index={index}
+              active={item.name === term}
+              handlePress={() => setTerm(item.name)}
             />
           );
         }}
