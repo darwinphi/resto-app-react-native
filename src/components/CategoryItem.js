@@ -1,8 +1,13 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 
-export default function CategoryItem({ name, imageUrl }) {
+export default function CategoryItem({ name, imageUrl, index }) {
   return (
-    <View style={[styles.container]}>
+    <View
+      style={[
+        styles.container,
+        index === 0 ? { marginLeft: 25 } : { marginLeft: 15 },
+      ]}
+    >
       <View style={styles.imageContainer}>
         <Image source={imageUrl} style={styles.image} />
       </View>
@@ -17,7 +22,6 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 50,
     marginVertical: 15,
-    marginHorizontal: 25,
     backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",

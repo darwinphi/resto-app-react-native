@@ -23,8 +23,14 @@ export default function App() {
       <Search />
       <FlatList
         data={commonCategories}
-        renderItem={({ item }) => {
-          return <CategoryItem name={item.name} imageUrl={item.imageUrl} />;
+        renderItem={({ item, index }) => {
+          return (
+            <CategoryItem
+              name={item.name}
+              imageUrl={item.imageUrl}
+              index={index}
+            />
+          );
         }}
         horizontal
         showsHorizontalScrollIndicator={false}
