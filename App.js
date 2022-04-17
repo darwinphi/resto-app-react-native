@@ -23,7 +23,7 @@ export default function App() {
   return (
     <View>
       <Header />
-      <Search />
+      <Search setTerm={setTerm} />
 
       <FlatList
         data={commonCategories}

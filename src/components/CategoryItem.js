@@ -1,5 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
-import { TouchableOpacity } from "react-native-web";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 export default function CategoryItem({
   name,
