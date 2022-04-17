@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, FlatList, Button } from "react-native";
 import { useFonts, Inter_700Bold } from "@expo-google-fonts/inter";
 import Header from "./src/components/Header";
 import Search from "./src/components/Search";
-import CategoryItem from "./src/components/CategoryItem";
+import Categories from "./src/components/Categories";
 import { useState } from "react";
 
 export default function App() {
@@ -25,24 +25,7 @@ export default function App() {
       <Header />
       <Search setTerm={setTerm} />
 
-      <FlatList
-        data={commonCategories}
-        renderItem={({ item, index }) => {
-          return (
-            <CategoryItem
-              name={item.name}
-              imageUrl={item.imageUrl}
-              index={index}
-              active={item.name === term}
-              handlePress={() => setTerm(item.name)}
-            />
-          );
-        }}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(category) => category.name}
-      />
-
+      <Categories categories={commonCategories} term={term} setTerm={setTerm} />
       <StatusBar style="auto" />
     </View>
   );
