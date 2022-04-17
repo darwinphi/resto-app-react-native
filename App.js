@@ -6,30 +6,12 @@ import Search from "./src/components/Search";
 import Categories from "./src/components/Categories";
 import { useState } from "react";
 import Restaurants from "./src/components/Restaurants";
+import HomeScreen from "./src/screens/HomeScreen";
 
 export default function App() {
   useFonts({ Inter_700Bold });
 
-  const [term, setTerm] = useState("Burger");
-
-  const commonCategories = [
-    { name: "Burger", imageUrl: require("./src/assets/images/burger.png") },
-    { name: "Pizza", imageUrl: require("./src/assets/images/pizza.png") },
-    { name: "Cake", imageUrl: require("./src/assets/images/cake.png") },
-    { name: "Pasta", imageUrl: require("./src/assets/images/pasta.png") },
-    { name: "Drinks", imageUrl: require("./src/assets/images/smoothies.png") },
-    { name: "Steak", imageUrl: require("./src/assets/images/steak.png") },
-  ];
-
-  return (
-    <View>
-      <Header />
-      <Search setTerm={setTerm} />
-      <Categories categories={commonCategories} term={term} setTerm={setTerm} />
-      <Restaurants term={term} />
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <HomeScreen />;
 }
 
 // const styles = StyleSheet.create({
