@@ -16,8 +16,6 @@ export default function Restaurants({ term }) {
     searchRestaurants(term);
   }, [term]);
 
-  console.log(data);
-
   if (loading) return <ActivityIndicator size="large" marginVertical={30} />;
 
   if (error)
