@@ -5,6 +5,7 @@ import Header from "./src/components/Header";
 import Search from "./src/components/Search";
 import Categories from "./src/components/Categories";
 import { useState } from "react";
+import Restaurants from "./src/components/Restaurants";
 
 export default function App() {
   useFonts({ Inter_700Bold });
@@ -24,8 +25,8 @@ export default function App() {
     <View>
       <Header />
       <Search setTerm={setTerm} />
-
       <Categories categories={commonCategories} term={term} setTerm={setTerm} />
+      <Restaurants term={term} />
       <StatusBar style="auto" />
     </View>
   );
