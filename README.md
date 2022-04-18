@@ -1,4 +1,4 @@
-# Resto App
+# 🍔 Resto App
 A simple restaurant app using React Native
 
 ## Get started
