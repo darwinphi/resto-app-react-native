@@ -1,7 +1,6 @@
 import { View, StyleSheet, Image, Text } from "react-native";
 
 export default function RestaurantItem({ restaurant }) {
-  console.log(restaurant.image_url);
   return (
     <View style={[styles.container]}>
       <Image
