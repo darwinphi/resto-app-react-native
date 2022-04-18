@@ -9,7 +9,7 @@ import useRestaurants from "../hooks/useRestaurants";
 import { useEffect } from "react";
 import RestaurantItem from "./RestaurantItem";
 
-export default function Restaurants({ term }) {
+export default function Restaurants({ term, navigation }) {
   const [{ data, loading, error }, searchRestaurants] = useRestaurants();
 
   useEffect(() => {
@@ -31,7 +31,9 @@ export default function Restaurants({ term }) {
       <FlatList
         data={data}
         keyExtractor={(restaurant) => restaurant.id}
-        renderItem={({ item }) => <RestaurantItem restaurant={item} />}
+        renderItem={({ item }) => (
+          <RestaurantItem navigation={navigation} restaurant={item} />
+        )}
       />
     </View>
   );

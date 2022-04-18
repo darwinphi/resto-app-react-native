@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Restaurants from "../components/Restaurants";
 import Search from "../components/Search";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const [term, setTerm] = useState("Burger");
 
   const commonCategories = [
@@ -22,7 +22,8 @@ export default function HomeScreen() {
       <Header />
       <Search setTerm={setTerm} />
       <Categories categories={commonCategories} term={term} setTerm={setTerm} />
-      <Restaurants term={term} />
+
+      <Restaurants term={term} navigation={navigation} />
     </View>
   );
 }

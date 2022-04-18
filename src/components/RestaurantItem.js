@@ -1,8 +1,11 @@
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
 
-export default function RestaurantItem({ restaurant }) {
+export default function RestaurantItem({ navigation, restaurant }) {
   return (
-    <View style={[styles.container]}>
+    <TouchableOpacity
+      style={[styles.container]}
+      onPress={() => navigation.navigate("Restaurant", { id: restaurant.id })}
+    >
       <Image
         style={styles.image}
         source={{
@@ -16,7 +19,7 @@ export default function RestaurantItem({ restaurant }) {
           <Text style={styles.money}>{restaurant.price}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
